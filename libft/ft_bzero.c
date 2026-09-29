@@ -1,0 +1,20 @@
+//header
+// byte-array zero
+// This function writes zeros ('\0') to the memory starting at the
+// location pointed to by a.
+
+void	ft_bzero(void *a, unsigned long n)
+{
+	unsigned char *p;
+	unsigned int	i;
+
+	p = (unsigned char *)a;
+	i = 0;
+
+	while (i < n)
+	{
+		p[i] = '\0';
+		i++;
+	}
+	return (a);
+}
