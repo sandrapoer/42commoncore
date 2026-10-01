@@ -4,10 +4,10 @@
 // in the string big, where not more than len characters are 
 // searched.
 
-char	*ft_strnstr(const char *big, const char *little, unsigned long len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	unsigned long	i;
-	unsigned long	j;
+	size_t		i;
+	size_t		j;
 
 	i = 0;
 	if (little[i] == '\0')

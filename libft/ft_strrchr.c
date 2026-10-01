@@ -6,8 +6,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	unsigned long	i;
-	unsigned long	len;
+	size_t		i;
+	size_t		len;
 
 	i = 0;
 	while (s[i] != '\0')

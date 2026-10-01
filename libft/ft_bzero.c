@@ -3,7 +3,7 @@
 // This function writes zeros ('\0') to the memory starting at the
 // location pointed to by a.
 
-void	ft_bzero(void *a, unsigned long n)
+void	ft_bzero(void *a, size_t n)
 {
 	unsigned char *p;
 	unsigned int	i;

@@ -5,9 +5,9 @@
 // s for the first instance of c. c and s are interpreted
 // as unsigned char
 
-void	*ft_memchr(const void *s; int c, unsigned long n)
+void	*ft_memchr(const void *s; int c, size_t n)
 {
-	unsigned long		i;
+	size_t			i;
 	const unsigned char	*p;
 
 	p = (const unsigned char *)s;

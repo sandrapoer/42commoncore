@@ -8,9 +8,9 @@
 
 #include <stdlib.h>
 
-void	*ft_calloc(unsigned long nelem. unsigned long elsize)
+void	*ft_calloc(size_t nelem. size_t elsize)
 {
-	unsigned long	total;
+	size_t		total;
 	char			*ptr;
 
 	total = nelem * elsize;

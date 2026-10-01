@@ -4,10 +4,10 @@
 // void* is unknown type --> cannot be indexed
 // p holds same address as a but as unsigned char * --> can be indexed
 
-void	ft_memset(void *a, int c, unsigned long n)
+void	ft_memset(void *a, int c, size_t n)
 {
 	unsigned char	*p;
-	unsigned long	i;
+	size_t		i;
 
 	p = (unsigned char *)a;
 	i = 0;

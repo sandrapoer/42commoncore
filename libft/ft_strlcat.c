@@ -5,14 +5,14 @@
 // pointed to by dst (overwriting its terminating null byte)
 // if the string doesn't fit in the buffer, it is truncated
 
-unsigned long	ft_strlcat(char *dst, const char *src, unsigned long dsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dsize)
 {
-	unsigned long	i;	
-	unsigned long	dstlen;
-	unsigned long	srclen;
+	size_t		i;	
+	size_t		dstlen;
+	size_t		srclen;
 
 	i = 0;
-	while (dst[i] != '\0')
+	while (i < dsize && dst[i] != '\0')
 		i++;
 	dstlen = i;
 	i = 0;

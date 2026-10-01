@@ -2,9 +2,9 @@
 
 // compares the first n bytes of memory areas s1 and s2
 
-int	ft_memcmp(const void *s1, const void *s2, unsigned long n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned long		i;
+	size_t			i;
 	const unsigned char	*str1;
 	const unsigned char	*str2;
 

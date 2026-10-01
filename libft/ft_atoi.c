@@ -8,8 +8,9 @@ int	ft_atoi(char *str)
 
 	c = 0;
 	sign = 1;
-	while (str[c] == ' ')
-		c++;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+        || str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+    	i++;
 	if (str[c]	== '-' || str[c] == '+')
 	{
 		if (str[c] == '-')
