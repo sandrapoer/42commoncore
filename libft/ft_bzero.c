@@ -3,30 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spoernba <spoernba@student.42vienna.c      +#+  +:+       +#+        */
+/*   By: spoernba <spoernba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 15:51:02 by spoernba          #+#    #+#             */
-/*   Updated: 2026/10/01 15:51:06 by spoernba         ###   ########.fr       */
+/*   Updated: 2026/10/01 17:33:22 by spoernba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//header
 // byte-array zero
 // This function writes zeros ('\0') to the memory starting at the
-// location pointed to by a.
+// location pointed to by s == erases n bytes.
 
-void	ft_bzero(void *a, size_t n)
+#include <stdio.h>
+
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *p;
+	unsigned char	*p;
 	unsigned int	i;
 
-	p = (unsigned char *)a;
+	p = (unsigned char *)s;
 	i = 0;
 
 	while (i < n)
 	{
-		p[i] = '\0';
+		*p = '\0';
+		++p;
 		i++;
 	}
-	return (a);
+}
+
+int main(void)
+{
+	int	s[5] = {1, 2, 3, 4};
+	size_t	n = 3;
+
+	ft_bzero(s, n);
+	return(0);	
 }

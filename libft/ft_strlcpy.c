@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spoernba <spoernba@student.42vienna.c      +#+  +:+       +#+        */
+/*   By: spoernba <spoernba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 15:54:42 by spoernba          #+#    #+#             */
-/*   Updated: 2026/10/01 15:54:44 by spoernba         ###   ########.fr       */
+/*   Updated: 2026/10/01 17:57:26 by spoernba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// header
 
 // string return-hypothetical-non-truncated-length copy
 // copies the string pointed to by src, into a string at 
 // the buffer pointed to by dst
 // if the string doesn't fit in the buffer, it is truncated
+
+#include <stdio.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 {
@@ -36,4 +36,14 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 	while (src[srclen] != '\0')
 		srclen++;
 	return(srclen);
+}
+
+int main(void)
+{
+	char dst[10] = "Hello";
+	char src[10] = "World";
+	size_t dsize = 10;
+
+	printf("%s\n", (char*)ft_strlcpy(dst, src, dsize));
+	return(0);
 }
