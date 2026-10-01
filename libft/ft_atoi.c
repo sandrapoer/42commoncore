@@ -1,11 +1,5 @@
 // header
 
-//change to regular atoi
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 int	ft_atoi(char *str)
 {
 	int	c;
@@ -16,26 +10,18 @@ int	ft_atoi(char *str)
 	sign = 1;
 	while (str[c] == ' ')
 		c++;
-	if (str[c]	== '-')
-		sign = sign * -1;
-		c++;
-	if (str[c] == '+')
-		c++;
-	number = 0;
-	while (str[c] >= 0 && str[c] <= 9)
+	if (str[c]	== '-' || str[c] == '+')
 	{
-		number = str[c] * 10;
+		if (str[c] == '-')
+			sign = -1;
+		c++;
 	}
-
+	number = 0;
+	while (str[c] >= '0' && str[c] <= '9')
+	{
+		number = number * 10 + (str[c] - '0');
+		c++;
+	}
 	number = number * sign;
 	return (number);
-}
-
-int main(void)
-{
-	printf("Atoi does this:\n");
-	printf(atoi("   ---+--+123ab567"));
-	printf("\nMy function should do the same:\n");
-	ft_atoi("   ---+--+123ab567");
-	return (0);
 }
