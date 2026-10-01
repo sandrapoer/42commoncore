@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: spoernba <spoernba@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/01 15:57:08 by spoernba          #+#    #+#             */
+/*   Updated: 2026/10/01 15:57:25 by spoernba         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // Create your own library: a collection of functions that will
 // be a useful tool for your curriculumm
 

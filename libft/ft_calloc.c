@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: spoernba <spoernba@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/01 15:51:12 by spoernba          #+#    #+#             */
+/*   Updated: 2026/10/01 15:51:22 by spoernba         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // use malloc()
 // if nmemb or size is 0 then calloc() returns a uniwue pointer value
 // that can be successfully passed to free()
