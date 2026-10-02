@@ -32,6 +32,7 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
+/*
 int main(void)
 {
 	int	s[5] = {1, 2, 3, 4};
@@ -40,3 +41,4 @@ int main(void)
 	ft_bzero(s, n);
 	return(0);	
 }
+*/

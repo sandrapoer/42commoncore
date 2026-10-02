@@ -21,6 +21,7 @@ size_t	ft_strlen(const char *s)
 	return (c);
 }
 
+/*
 #include <stdio.h>
 int main(void)
 {
@@ -33,3 +34,4 @@ int main(void)
 	printf("%lu\n", ft_strlen(ex3));
 	return(0);	
 }
+*/

@@ -44,6 +44,7 @@ int main(void)
 	char src[10] = "World";
 	size_t dsize = 10;
 
-	printf("%s\n", (char*)ft_strlcpy(dst, src, dsize));
+	ft_strlcpy(dst, src, dsize);
+	printf("%s\n", dst);
 	return(0);
 }

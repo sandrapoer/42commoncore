@@ -18,16 +18,16 @@
 // nelem elements each of whose size in bytes is elsize. The space
 // shall be initialized to all bits 0.
 
+#include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
-void	*ft_calloc(size_t nelem, size_t elsize)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t		total;
-	char			*ptr;
+	size_t	total;
+	char	*ptr;
 
-	total = nelem * elsize;
-	if (elsize != 0 && total / elsize != nelem)
+	total = nmemb * size;
+	if (size != 0 && total / size != nmemb)
 		return (0);
 	if (total == 0)
 		ptr = malloc(1);
@@ -39,19 +39,19 @@ void	*ft_calloc(size_t nelem, size_t elsize)
 	return(ptr);
 }
 
+#include <stdio.h>
 int main(void)
 {
-	size_t nelem = 5;
-	size_t elsize = sizeof(int);
-	int *arr = (int *)ft_calloc(nelem, elsize);
+	size_t nmemb = 5;
+	size_t size = 4;
+	int *arr = (int *)ft_calloc(nmemb, size);
 
 	if (arr == NULL)
 		return 1;
 
-	for (size_t i = 0; i < nelem; i++)
-	{
-		printf("%d\n", arr[i]);
-	}
+	for (size_t i = 0; i < nmemb; i++)
+		printf("%d ", arr[i]);
+	printf("\n");
 	free(arr);
 	return 0;
 }
