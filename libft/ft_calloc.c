@@ -19,8 +19,9 @@
 // shall be initialized to all bits 0.
 
 #include <stdlib.h>
+#include <stdio.h>
 
-void	*ft_calloc(size_t nelem. size_t elsize)
+void	*ft_calloc(size_t nelem, size_t elsize)
 {
 	size_t		total;
 	char			*ptr;
@@ -34,6 +35,23 @@ void	*ft_calloc(size_t nelem. size_t elsize)
 		ptr = malloc(total);
 	if (ptr == NULL)
 		return (NULL);
-	ft_bzero(ptr, total)
+	ft_bzero(ptr, total);
 	return(ptr);
+}
+
+int main(void)
+{
+	size_t nelem = 5;
+	size_t elsize = sizeof(int);
+	int *arr = (int *)ft_calloc(nelem, elsize);
+
+	if (arr == NULL)
+		return 1;
+
+	for (size_t i = 0; i < nelem; i++)
+	{
+		printf("%d\n", arr[i]);
+	}
+	free(arr);
+	return 0;
 }

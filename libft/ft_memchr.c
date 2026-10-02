@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//header
-
 // memory search character
 // scans initial n bytes of the memory area pointed to by
 // s for the first instance of c. c and s are interpreted
 // as unsigned char
 
-void	*ft_memchr(const void *s; int c, size_t n)
+#include <stdio.h>
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t			i;
 	const unsigned char	*p;
@@ -31,4 +31,14 @@ void	*ft_memchr(const void *s; int c, size_t n)
 		i++;
 	}
 	return (0);
+}
+
+int main(void)
+{
+	char str[20] = "Hello, World!";
+	char character = 'o';
+	size_t n = 10;
+
+	printf("%s\n", (char*)ft_memchr(str, character, n));
+	return 0;
 }

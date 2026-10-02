@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//header
-
 // locates first occurrence of the null-terminated string little
 // in the string big, where not more than len characters are 
 // searched.
+
+#include <stdio.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -27,11 +27,21 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (big[i] != '\0' && i < len)
 	{
 		j = 0;
-		while (littel[j] != '\0' && big[i + j] == little[j] && i + j < len)
+		while (little[j] != '\0' && big[i + j] == little[j] && i + j < len)
 			j++;
 		if (little[j] == '\0')
-			return ((char*)&big[i])
+			return ((char*)&big[i]);
 		i++;
 	}
 	return (0);
+}
+
+int main(void)
+{
+	char*	ex1 = "Hello, World!";
+	char*	ex2 = "World";
+	size_t n = 100;
+
+	printf("%s\n", ft_strnstr(ex1, ex2, n));
+	return(0);	
 }

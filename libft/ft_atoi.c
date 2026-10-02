@@ -12,27 +12,42 @@
 
 int	ft_atoi(char *str)
 {
-	int	c;
+	int	i;
 	int sign;
 	int	number;
 
-	c = 0;
+	i = 0;
 	sign = 1;
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
         || str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
     	i++;
-	if (str[c]	== '-' || str[c] == '+')
+	if (str[i]	== '-' || str[i] == '+')
 	{
-		if (str[c] == '-')
+		if (str[i] == '-')
 			sign = -1;
-		c++;
+		i++;
 	}
 	number = 0;
-	while (str[c] >= '0' && str[c] <= '9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		number = number * 10 + (str[c] - '0');
-		c++;
+		number = number * 10 + (str[i] - '0');
+		i++;
 	}
 	number = number * sign;
 	return (number);
+}
+
+#include <stdio.h>
+int main(void)
+{
+	char*	ex1 = "1234";
+	char*	ex2 = " -1234";
+	char*	ex3 = " +1234";
+	char*	ex4 = " --1234";
+
+	printf("%d\n", ft_atoi(ex1));
+	printf("%d\n", ft_atoi(ex2));
+	printf("%d\n", ft_atoi(ex3));
+	printf("%d\n", ft_atoi(ex4));
+	return(0);	
 }

@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//header
-
 // compares the first n bytes of memory areas s1 and s2
+
+#include <stdio.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -31,4 +31,14 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		i++;
 	}
 	return (0);
+}
+
+int main(void)
+{
+	char*	ex1 = "Hello";
+	char*	ex2 = "hello";
+	size_t n = 3;
+
+	printf("%d\n", ft_memcmp(ex1, ex2, n));
+	return(0);	
 }

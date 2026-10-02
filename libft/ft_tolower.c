@@ -18,3 +18,15 @@ int	ft_tolower(int c)
 		c += 32;
 	return (c);
 }
+
+#include <stdio.h>
+int main(void)
+{
+	int ex1 = '8';
+	int ex2 = 'z';
+	int ex3 = 'A';
+	printf("%c\n", ft_tolower(ex1));
+	printf("%c\n", ft_tolower(ex2));
+	printf("%c\n", ft_tolower(ex3));
+	return (0);
+}
