@@ -12,7 +12,7 @@
 
 int	ft_isdigit(int c)
 {
-	if (c >= 0 && c <= 9)
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
@@ -20,9 +20,9 @@ int	ft_isdigit(int c)
 #include <stdio.h>
 int main(void)
 {
-	int	ex1 = 1;
-	int ex2 = 0;
-	int ex3 = 4454;
+	int	ex1 = '1';
+	int ex2 = '0';
+	int ex3 = '4';
 
 	printf("%d\n", ft_isdigit(ex1));
 	printf("%d\n", ft_isdigit(ex2));
