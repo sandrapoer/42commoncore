@@ -38,6 +38,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 	return(srclen);
 }
 
+/*
 int main(void)
 {
 	char dst[10] = "Hello";
@@ -48,3 +49,4 @@ int main(void)
 	printf("%s\n", dst);
 	return(0);
 }
+*/
