@@ -18,6 +18,7 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+# include <unistd.h> //write()
 //for printf:
 # include <stdio.h>
 
