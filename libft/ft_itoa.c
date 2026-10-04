@@ -34,6 +34,8 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 		nbr = -nbr;
 	}
+	if (nbr == 0)
+		str[0] = '0';
 	while (nbr > 0)
 	{
 		len--;
@@ -43,6 +45,7 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
+/*
 int main(void)
 {
 	int n = -1234500;
@@ -51,3 +54,4 @@ int main(void)
 	free(result);
 	return (0);
 }
+*/
