@@ -6,7 +6,7 @@
 /*   By: spoernba <spoernba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 15:52:53 by spoernba          #+#    #+#             */
-/*   Updated: 2026/10/01 17:42:26 by spoernba         ###   ########.fr       */
+/*   Updated: 2026/10/06 15:57:08 by spoernba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	d = (unsigned char*)dest;
 	s = (const unsigned char*)src;
-	i = 0;
-	while (i < n)
-	{
+	i = -1;
+	while (++i < n)
 		d[i] = s[i];
-		i++;
-	}
 	return (dest);
 }
 
-int main(void)
-{
-	char dest[10] = "hello";
-	char src[10] = "world";
-	size_t n = 2;
-	printf("%s", (char*)ft_memcpy(dest, src, n));
-	return(0);
-}
+c
