@@ -15,7 +15,7 @@
 // pointed to by dst (overwriting its terminating null byte)
 // if the string doesn't fit in the buffer, it is truncated
 
-# include <stdio.h>
+#include <stdio.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dsize)
 {

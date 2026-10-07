@@ -14,13 +14,13 @@
 // substring from the string ’s’.
 // The substring starts at index ’start’ and has a
 // maximum length of ’len’.
-# include "libft.h"
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 	size_t	i;
-	size_t 	lenstr;
+	size_t	lenstr;
 
 	lenstr = ft_strlen(s);
 	if (start >= lenstr)

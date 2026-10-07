@@ -15,7 +15,7 @@
 size_t	ft_wordcount(char const *s, char c)
 {
 	size_t		wordcount;
-	size_t	i;
+	size_t		i;
 
 	wordcount = 0;
 	i = 0;

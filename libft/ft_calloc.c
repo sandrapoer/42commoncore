@@ -36,9 +36,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (ptr == NULL)
 		return (NULL);
 	ft_bzero(ptr, total);
-	return(ptr);
+	return (ptr);
 }
 
+/*
 #include <stdio.h>
 int main(void)
 {
@@ -55,3 +56,4 @@ int main(void)
 	free(arr);
 	return 0;
 }
+*/
