@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	len_nbr(int n)
+static size_t	len_nbr(int n)
 {
 	size_t	len;
 
@@ -50,18 +50,7 @@ char	*ft_itoa(int n)
 	{
 		len--;
 		str[len] = (nbr % 10) + '0';
-		nbr /=10;
+		nbr /= 10;
 	}
 	return (str);
 }
-
-/*
-int main(void)
-{
-	int n = -1234500;
-	char *result = ft_itoa(n);
-	printf("%s\n", result);
-	free(result);
-	return (0);
-}
-*/

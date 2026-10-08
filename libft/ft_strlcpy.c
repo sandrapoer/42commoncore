@@ -11,11 +11,11 @@
 /* ************************************************************************** */
 
 // string return-hypothetical-non-truncated-length copy
-// copies the string pointed to by src, into a string at 
+// copies the string pointed to by src, into a string at
 // the buffer pointed to by dst
 // if the string doesn't fit in the buffer, it is truncated
 
-#include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 {
@@ -37,16 +37,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 		srclen++;
 	return (srclen);
 }
-
-/*
-int main(void)
-{
-	char dst[10] = "Hello";
-	char src[10] = "World";
-	size_t dsize = 10;
-
-	ft_strlcpy(dst, src, dsize);
-	printf("%s\n", dst);
-	return(0);
-}
-*/

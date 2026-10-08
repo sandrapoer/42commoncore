@@ -11,10 +11,21 @@
 /* ************************************************************************** */
 
 //Allocates memory (using malloc(3)) and returns a
-// substring from the string ’s’.
-// The substring starts at index ’start’ and has a
-// maximum length of ’len’.
+// substring from the string ‘s’.
+// The substring starts at index ‘start’ and has a
+// maximum length of ‘len’.
 #include "libft.h"
+
+static char	*empty_str(void)
+{
+	char	*substr;
+
+	substr = malloc(1);
+	if (substr == 0)
+		return (0);
+	substr[0] = '\0';
+	return (substr);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -22,15 +33,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	lenstr;
 
+	if (s == 0)
+		return (0);
 	lenstr = ft_strlen(s);
 	if (start >= lenstr)
-	{
-		substr = malloc(1);
-		if (substr == 0)
-			return (0);
-		substr[0] = '\0';
-		return (substr);
-	}
+		return (empty_str());
 	if (len > lenstr - start)
 		len = lenstr - start;
 	substr = malloc(len + 1);
@@ -45,20 +52,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[i] = '\0';
 	return (substr);
 }
-
-/*
-int main(void)
-{
-	char *s = "Hello, World!";
-	unsigned int start = 7;
-	size_t len = 3;
-
-	char *substr = ft_substr(s, start, len);
-	if (substr != NULL)
-	{
-		printf("%s\n", substr);
-		free(substr);
-	}
-	return 0;
-}
-*/

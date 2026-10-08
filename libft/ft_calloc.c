@@ -19,7 +19,6 @@
 // shall be initialized to all bits 0.
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
@@ -38,22 +37,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(ptr, total);
 	return (ptr);
 }
-
-/*
-#include <stdio.h>
-int main(void)
-{
-	size_t nmemb = 5;
-	size_t size = 4;
-	int *arr = (int *)ft_calloc(nmemb, size);
-
-	if (arr == NULL)
-		return 1;
-
-	for (size_t i = 0; i < nmemb; i++)
-		printf("%d ", arr[i]);
-	printf("\n");
-	free(arr);
-	return 0;
-}
-*/

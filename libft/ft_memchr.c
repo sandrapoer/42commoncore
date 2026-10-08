@@ -15,30 +15,20 @@
 // s for the first instance of c. c and s are interpreted
 // as unsigned char
 
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t			i;
+	size_t				i;
 	const unsigned char	*p;
 
 	p = (const unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{
-		if (p[i] ==  (unsigned char)c)
+		if (p[i] == (unsigned char)c)
 			return ((void *)&p[i]);
 		i++;
 	}
 	return (0);
-}
-
-int main(void)
-{
-	char str[20] = "Hello, World!";
-	char character = 'o';
-	size_t n = 10;
-
-	printf("%s\n", (char*)ft_memchr(str, character, n));
-	return 0;
 }

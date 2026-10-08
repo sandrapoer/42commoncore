@@ -14,7 +14,7 @@
 // returns a pointer to the first occurence of the matched character or NULL
 // if the character is not found. '\0' considered part of string
 
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -30,13 +30,4 @@ char	*ft_strchr(const char *s, int c)
 	if ((char)c == '\0')
 		return ((char *)&s[i]);
 	return (0);
-}
-
-int main(void)
-{
-	char str[20] = "Hello, World!";
-	char character = 'W';
-
-	printf("%s\n", ft_strchr(str, character));
-	return 0;
 }

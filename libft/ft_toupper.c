@@ -10,21 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 		c -= 32;
 	return (c);
-}
-
-#include <stdio.h>
-int main(void)
-{
-	int ex1 = 'a';
-	int ex2 = 'z';
-	int ex3 = 'A';
-	printf("%c\n", ft_toupper(ex1));
-	printf("%c\n", ft_toupper(ex2));
-	printf("%c\n", ft_toupper(ex3));
-	return (0);
 }

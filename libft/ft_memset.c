@@ -15,12 +15,12 @@
 // void* is unknown type --> cannot be indexed
 // p holds same address as a but as unsigned char * --> can be indexed
 
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*p;
-	size_t		i;
+	size_t			i;
 
 	p = (unsigned char *)s;
 	i = 0;
@@ -30,14 +30,4 @@ void	*ft_memset(void *s, int c, size_t n)
 		i++;
 	}
 	return (s);
-}
-
-int main(void)
-{
-	char	s[10] = "Hello";
-	int	c = 35;
-	size_t	n = 3;
-
-	printf("%s\n", (char *)ft_memset(s, c, n));
-	return(0);	
 }

@@ -14,7 +14,8 @@
 // finds last occurrence of c in the string pointed to by s. The
 // termination NUL character is considered part of the string
 
-#include <stdio.h>
+#include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
 	size_t		i;
@@ -33,13 +34,4 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)&s[i]);
 	}
 	return (0);
-}
-
-int main(void)
-{
-	char str[20] = "Hello, World!";
-	char character = 'o';
-
-	printf("%s\n", ft_strrchr(str, character));
-	return 0;
 }
