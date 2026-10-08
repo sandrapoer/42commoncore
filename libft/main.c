@@ -1,4 +1,6 @@
+#include "libft.h"
 #include <stdio.h>
+#include <string.h>
 
 void	ft_atoi_tester(void)
 {
@@ -279,6 +281,216 @@ void ft_toupper_tester(void)
 	printf("%c\n", ft_toupper(ex3));
 }
 
+void ft_memcpy_tester(void)
+{
+	char	dest[10] = "Hello";
+	char	src[10] = "World";
+	size_t	n = 3;
+
+	printf("%s\n", (char *)ft_memcpy(dest, src, n));
+	printf("%s\n", (char *)ft_memcpy(dest, src, 0));
+	printf("%s\n", (char *)ft_memcpy(dest, src, 6));
+}
+
+char ft_strmapi_f(unsigned int i, char c)
+{
+	if (i % 2 == 0 && c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
+}
+
+void ft_strmapi_tester(void)
+{
+	char	*ex1 = "hello world";
+	char	*ex2 = "";
+	char	*r1 = ft_strmapi(ex1, ft_strmapi_f);
+	char	*r2 = ft_strmapi(ex2, ft_strmapi_f);
+
+	printf("%s\n", r1);
+	printf("[%s]\n", r2);
+	free(r1);
+	free(r2);
+}
+
+void ft_striteri_f(unsigned int i, char *c)
+{
+	if (i % 2 == 0 && *c >= 'a' && *c <= 'z')
+		*c -= 32;
+}
+
+void ft_striteri_tester(void)
+{
+	char	ex1[] = "hello world";
+	char	ex2[] = "";
+
+	ft_striteri(ex1, ft_striteri_f);
+	ft_striteri(ex2, ft_striteri_f);
+	printf("%s\n", ex1);
+	printf("[%s]\n", ex2);
+}
+
+void ft_putchar_fd_tester(void)
+{
+	ft_putchar_fd('A', 1);
+	ft_putchar_fd('\n', 1);
+	ft_putchar_fd('B', 2);
+	ft_putchar_fd('\n', 2);
+}
+
+void ft_putstr_fd_tester(void)
+{
+	ft_putstr_fd("Hello, World!\n", 1);
+	ft_putstr_fd("", 1);
+	ft_putstr_fd("error\n", 2);
+}
+
+void ft_putendl_fd_tester(void)
+{
+	ft_putendl_fd("Hello", 1);
+	ft_putendl_fd("", 1);
+	ft_putendl_fd("error", 2);
+}
+
+void ft_putnbr_fd_tester(void)
+{
+	int	ex1 = 0;
+	int	ex2 = -42;
+	int	ex3 = 2147483647;
+	int	ex4 = -2147483648;
+
+	ft_putnbr_fd(ex1, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(ex2, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(ex3, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(ex4, 1);
+	ft_putchar_fd('\n', 1);
+}
+
+void ft_lstnew_tester(void)
+{
+	t_list	*ex1 = ft_lstnew(ft_strdup("Hello"));
+	t_list	*ex2 = ft_lstnew(NULL);
+
+	printf("%s %p\n", (char *)ex1->content, (void *)ex1->next);
+	printf("%p %p\n", ex2->content, (void *)ex2->next);
+	ft_lstdelone(ex1, free);
+	free(ex2);
+}
+
+void ft_lstadd_front_tester(void)
+{
+	t_list	*head = NULL;
+	t_list	*ex1 = ft_lstnew(ft_strdup("b"));
+	t_list	*ex2 = ft_lstnew(ft_strdup("a"));
+
+	ft_lstadd_front(&head, ex1);
+	ft_lstadd_front(&head, ex2);
+	printf("%s %s\n", (char *)head->content, (char *)head->next->content);
+	ft_lstclear(&head, free);
+}
+
+void ft_lstsize_tester(void)
+{
+	t_list	*ex1 = NULL;
+	t_list	*ex2 = ft_lstnew(ft_strdup("a"));
+	t_list	*ex3 = ft_lstnew(ft_strdup("b"));
+
+	ex2->next = ex3;
+	printf("%d\n", ft_lstsize(ex1));
+	printf("%d\n", ft_lstsize(ex3));
+	printf("%d\n", ft_lstsize(ex2));
+	ft_lstclear(&ex2, free);
+}
+
+void ft_lstlast_tester(void)
+{
+	t_list	*ex1 = NULL;
+	t_list	*ex2 = ft_lstnew(ft_strdup("a"));
+	t_list	*ex3 = ft_lstnew(ft_strdup("b"));
+
+	ex2->next = ex3;
+	printf("%p\n", (void *)ft_lstlast(ex1));
+	printf("%s\n", (char *)ft_lstlast(ex3)->content);
+	printf("%s\n", (char *)ft_lstlast(ex2)->content);
+	ft_lstclear(&ex2, free);
+}
+
+void ft_lstadd_back_tester(void)
+{
+	t_list	*head = NULL;
+	t_list	*ex1 = ft_lstnew(ft_strdup("a"));
+	t_list	*ex2 = ft_lstnew(ft_strdup("b"));
+
+	ft_lstadd_back(&head, ex1);
+	printf("%s\n", (char *)head->content);
+	ft_lstadd_back(&head, ex2);
+	printf("%s %s\n", (char *)head->content, (char *)head->next->content);
+	ft_lstclear(&head, free);
+}
+
+void ft_lstdelone_tester(void)
+{
+	t_list	*ex1 = ft_lstnew(ft_strdup("delete me"));
+
+	ft_lstdelone(ex1, free);
+	printf("done\n");
+}
+
+void ft_lstclear_tester(void)
+{
+	t_list	*ex1 = ft_lstnew(ft_strdup("a"));
+	t_list	*ex2 = ft_lstnew(ft_strdup("b"));
+	t_list	*ex3 = NULL;
+
+	ex1->next = ex2;
+	ft_lstclear(&ex1, free);
+	ft_lstclear(&ex3, free);
+	printf("%p %p\n", (void *)ex1, (void *)ex3);
+}
+
+void ft_lstiter_f(void *content)
+{
+	printf("%s ", (char *)content);
+}
+
+void ft_lstiter_tester(void)
+{
+	t_list	*ex1 = ft_lstnew(ft_strdup("a"));
+	t_list	*ex2 = ft_lstnew(ft_strdup("b"));
+	t_list	*ex3 = NULL;
+
+	ex1->next = ex2;
+	ft_lstiter(ex1, ft_lstiter_f);
+	ft_lstiter(ex3, ft_lstiter_f);
+	printf("\n");
+	ft_lstclear(&ex1, free);
+}
+
+void *ft_lstmap_f(void *content)
+{
+	return (ft_strdup((char *)content));
+}
+
+void ft_lstmap_tester(void)
+{
+	t_list	*ex1 = ft_lstnew(ft_strdup("a"));
+	t_list	*ex2 = ft_lstnew(ft_strdup("b"));
+	t_list	*ex3 = NULL;
+	t_list	*r1;
+	t_list	*r2;
+
+	ex1->next = ex2;
+	r1 = ft_lstmap(ex1, ft_lstmap_f, free);
+	r2 = ft_lstmap(ex3, ft_lstmap_f, free);
+	printf("%s %s\n", (char *)r1->content, (char *)r1->next->content);
+	printf("%p\n", (void *)r2);
+	printf("%d\n", r1 != ex1);
+	ft_lstclear(&ex1, free);
+	ft_lstclear(&r1, free);
+}
+
 int main(void)
 {
 	ft_atoi_tester();
@@ -308,5 +520,21 @@ int main(void)
 	ft_substr_tester();
 	ft_tolower_tester();
 	ft_toupper_tester();
+	ft_memcpy_tester();
+	ft_strmapi_tester();
+	ft_striteri_tester();
+	ft_putchar_fd_tester();
+	ft_putstr_fd_tester();
+	ft_putendl_fd_tester();
+	ft_putnbr_fd_tester();
+	ft_lstnew_tester();
+	ft_lstadd_front_tester();
+	ft_lstsize_tester();
+	ft_lstlast_tester();
+	ft_lstadd_back_tester();
+	ft_lstdelone_tester();
+	ft_lstclear_tester();
+	ft_lstiter_tester();
+	ft_lstmap_tester();
 	return (0);
 }
