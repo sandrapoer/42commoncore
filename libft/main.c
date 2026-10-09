@@ -543,7 +543,7 @@ void ft_lstmap_tester(void)
 int main(void)
 {
 	printf("\n");
-	pritnf("Atoi\n");
+	printf("Atoi\n");
 	ft_atoi_tester();
 	printf("\n");
 	printf("Bzero\n");

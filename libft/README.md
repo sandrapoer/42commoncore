@@ -10,7 +10,7 @@ The project has three parts:
 
 - **Part 1 (libc functions):** re-implementations of functions such as `ft_strlen`, `ft_memcpy`, `ft_memmove`, `ft_strlcpy`, `ft_strlcat`, `ft_strnstr`, `ft_atoi`, `ft_calloc` and `ft_strdup`, plus the character checks (`ft_isalpha`, `ft_isdigit`, ...).
 - **Part 2 (additional functions):** `ft_substr`, `ft_strjoin`, `ft_strtrim`, `ft_split`, `ft_itoa`, `ft_strmapi`, `ft_striteri` and the `ft_put*_fd` output functions.
-- **Linked list functions:** `ft_lstnew`, `ft_lstadd_front`, `ft_lstadd_back`, `ft_lstsize`, `ft_lstlast`, `ft_lstdelone`, `ft_lstclear`, `ft_lstiter` and `ft_lstmap`. <remove or adjust if not all are included>
+- **Linked list functions:** `ft_lstnew`, `ft_lstadd_front`, `ft_lstadd_back`, `ft_lstsize`, `ft_lstlast`, `ft_lstdelone`, `ft_lstclear`, `ft_lstiter` and `ft_lstmap`.
 
 All functions follow the 42 Norm, only use the allowed external functions (`malloc`, `free`, `write`), and free everything they allocate.
 
@@ -25,7 +25,7 @@ make fclean # removes object files and libft.a
 make re     # rebuilds everything
 ```
 
-The library is compiled with `cc -Wall -Wextra -Werror`. <adjust to your Makefile>
+The library is compiled with `cc -Wall -Wextra -Werror` and archived with `ar rcs`.
 
 **Usage**
 
