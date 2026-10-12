@@ -18,3 +18,18 @@ int	ft_tolower(int c)
 		c += 32;
 	return (c);
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	int ex1 = 'H';
+	int ex2 = '1';
+	int ex3 = 'g';
+
+	printf("%s%c\n", "Expected h --> ", ft_tolower(ex1));
+	printf("%s%c\n", "Expected 1 --> ", ft_tolower(ex2));
+	printf("%s%c\n", "Expected g --> ", ft_tolower(ex3));
+	return (0);
+}
+*/

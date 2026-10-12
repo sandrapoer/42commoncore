@@ -14,6 +14,8 @@
 // catenates the string pointed to by src, after the string
 // pointed to by dst (overwriting its terminating null byte)
 // if the string doesn't fit in the buffer, it is truncated
+// guaranteed null-terminated
+// src + dst must be null-terminated
 
 #include "libft.h"
 
@@ -42,3 +44,19 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dsize)
 	dst[dstlen + i] = '\0';
 	return (dstlen + srclen);
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	const char *src = "Hello World!";
+	size_t dsize = 8;
+	char dest[8] = "Hello";
+	size_t result = ft_strlcat(dest, src, dsize);
+
+	printf("%s%zu\n", "Buffer size      --> ", dsize);
+	printf("%s%zu\n", "Expected 17      --> ", result);
+	printf("%s%s\n", "Expected HelloHe --> ", dest);
+	return (0);
+}
+*/

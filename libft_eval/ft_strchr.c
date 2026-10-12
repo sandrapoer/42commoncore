@@ -31,3 +31,20 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (0);
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	char * ex1 = "Hello";
+	char * ex2 = "";
+	int c1 = 'l';
+	int c2 = '0';
+
+	printf("%s%s\n", "Expected llo  --> ", (char*)ft_strchr(ex1, c1));
+	printf("%s%s\n", "Expected null --> ", (char*)ft_strchr(ex1, c2));
+	printf("%s%s\n", "Expected null --> ", (char*)ft_strchr(ex2, c1));
+	printf("%s%s\n", "Expected null --> ", (char*)ft_strchr(ex2, c2));
+	return (0);
+}
+*/

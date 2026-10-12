@@ -32,3 +32,21 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	char * ex1 = "Hello";
+	char * ex2 = "";
+	int c1 = 'l';
+	int c2 = '0';
+	size_t n = 3;
+
+	printf("%s%s\n", "Expected llo  --> ", (char*)ft_memchr(ex1, c1, n));
+	printf("%s%s\n", "Expected null --> ", (char*)ft_memchr(ex1, c2, n));
+	printf("%s%s\n", "Expected null --> ", (char*)ft_memchr(ex2, c1, n));
+	printf("%s%s\n", "Expected null --> ", (char*)ft_memchr(ex2, c2, n));
+	return (0);
+}
+*/

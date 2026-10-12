@@ -37,3 +37,19 @@ int	ft_atoi(const char *str)
 	}
 	return ((int)(number * sign));
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	char*	ex1 = "1234";
+	char*	ex2 = " --1234";
+	char*	ex3 = " +1234";
+	char*	ex4 = " -2147483648";
+
+	printf("%s%d\n", "Expected 1234        --> ", ft_atoi(ex1));
+	printf("%s%d\n", "Expected 0           --> ", ft_atoi(ex2));
+	printf("%s%d\n", "Expected 1234        --> ", ft_atoi(ex3));
+	printf("%s%d\n", "Expected -2147483648 --> ", ft_atoi(ex4));
+}
+*/

@@ -31,3 +31,18 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	char *s1 = "HELLO";
+	char *s2 = "Hello";
+	size_t n1 = 1;
+	size_t n2 = 3;
+
+	printf("%s%d\n", "Expected 0   --> ", ft_memcmp(s1, s2, n1));
+	printf("%s%d\n", "Expected -32 --> ", ft_memcmp(s1, s2, n2));
+	return (0);
+}
+*/
