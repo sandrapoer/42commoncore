@@ -23,3 +23,17 @@ t_list	*ft_lstnew(void *content)
 	node->next = NULL;
 	return (node);
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	t_list *node;
+	char *content = "Hello";
+
+	node = ft_lstnew(content);
+	printf("%s%s\n", "Expected Hello --> ", (char*)node->content);
+	free(node);
+	return (0);
+}
+*/
