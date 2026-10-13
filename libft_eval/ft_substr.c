@@ -21,9 +21,9 @@ static char	*empty_str(void)
 	char	*newstr;
 
 	newstr = malloc(1);
-	if (substr == 0)
+	if (newstr == 0)
 		return (0);
-	substr[0] = '\0';
+	newstr[0] = '\0';
 	return (newstr);
 }
 
@@ -53,7 +53,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (newstr);
 }
 
-
+/*
 int main(void)
 {
 	#include <stdio.h>
@@ -64,3 +64,4 @@ int main(void)
 	printf("%s%s\n", "Expected orld! --> ", ft_substr(s, start, len));
 	return (0); 
 }
+*/

@@ -37,3 +37,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 		last--;
 	return (ft_substr(s1, first, last - first));
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	const char *s1 = "AAccadbfcAAcc";
+	char const *set = "Ac";
+	char *result = ft_strtrim(s1, set);
+
+	printf("%s%s\n", "Expected adbf --> ", result);
+	free(result);
+	return(0);
+}
+*/

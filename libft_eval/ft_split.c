@@ -84,3 +84,21 @@ char	**ft_split(char const *s, char c)
 		return (0);
 	return (fill_words(result, s, c));
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	char const *s = "   This is a long sentence!! Isn't it ?? :)";
+	char c = 32;
+
+	size_t i = 0;
+	char **result = ft_split(s, c);
+	while (result[i])
+	{
+		printf("%s\n", result[i]);
+		i++;
+	}
+	return(0);
+}
+*/
