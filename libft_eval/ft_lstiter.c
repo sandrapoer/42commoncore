@@ -16,7 +16,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*current;
 
-	if (lst == 0)
+	if (lst == 0 || f == 0)
 		return ;
 	current = lst;
 	while (current != NULL)
