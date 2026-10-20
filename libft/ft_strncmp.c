@@ -25,3 +25,18 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (0);
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	char *s1 = "HELLO";
+	char *s2 = "Hello";
+	size_t n1 = 1;
+	size_t n2 = 3;
+
+	printf("%s%d\n", "Expected 0   --> ", ft_strncmp(s1, s2, n1));
+	printf("%s%d\n", "Expected -32 --> ", ft_strncmp(s1, s2, n2));
+	return (0);
+}
+*/

@@ -14,6 +14,7 @@
 // copies the string pointed to by src, into a string at
 // the buffer pointed to by dst
 // if the string doesn't fit in the buffer, it is truncated
+// guaranteed null-terminated
 
 #include "libft.h"
 
@@ -37,3 +38,18 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 		srclen++;
 	return (srclen);
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	const char *src = "Hello World!";
+	size_t dsize = 5;
+	char dest[dsize];
+
+	printf("%s%ld\n", "Buffer size   --> ", dsize);
+	printf("%s%ld\n", "Expected 12   --> ", ft_strlcpy(dest, src, dsize));
+	printf("%s%s\n", "Expected Hell --> ", dest);
+	return (0);
+}
+*/

@@ -35,3 +35,14 @@ char	*ft_strdup(const char *s)
 	new_str[i] = '\0';
 	return (new_str);
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	const char *s = "Hello";
+
+	printf("%s%s\n", "Expected Hello --> ", (char*)ft_strdup(s));
+	return (0);
+}
+*/

@@ -34,3 +34,16 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	char *src = "Hello World!";
+	char dest[10] = "";
+	size_t n = 5;
+
+	printf("%s%s\n", "Expected Hello --> ", (char*)ft_memcpy(dest, src, n));
+	return (0);
+}
+*/

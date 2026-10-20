@@ -49,3 +49,16 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		copy_backward(d, s, n);
 	return (dest);
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	char *src = "Hello World!";
+	char dest[20] = "";
+	size_t n = 5;
+
+	printf("%s%s\n", "Expected Hello --> ", (char*)ft_memmove(dest, src, n));
+	return (0);
+}
+*/

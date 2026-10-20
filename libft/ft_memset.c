@@ -13,7 +13,7 @@
 // The memset() function fills the first n bytes of the memory area
 // pointed to by a with the constant byte c.
 // void* is unknown type --> cannot be indexed
-// p holds same address as a but as unsigned char * --> can be indexed
+// p holds same address as s but as unsigned char * --> can be indexed
 
 #include "libft.h"
 
@@ -31,3 +31,18 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	char s[]= "Hello Wolrd!";
+	int c = 64;
+	size_t n = 6;
+
+	// %p returns address not whats stored there
+	// --> need to cast for %s to get whats stored
+	printf("%s%s\n", "Expected @@@@@@World! --> ", (char*)ft_memset(s, c, n));
+	return (0);
+}
+*/

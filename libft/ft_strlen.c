@@ -21,3 +21,18 @@ size_t	ft_strlen(const char *s)
 		c++;
 	return (c);
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	char *ex1 = "Hello";
+	char *ex2 = "123";
+	char *ex3 = "";
+
+	printf("%s%ld\n","Expected: 5 --> ", ft_strlen(ex1));
+	printf("%s%ld\n","Expected: 3 --> ", ft_strlen(ex2));
+	printf("%s%ld\n","Expected: 0 --> ", ft_strlen(ex3));
+	return (0);
+}
+*/

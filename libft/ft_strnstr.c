@@ -35,3 +35,18 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	const char *big = "Thisisalongstringisntit?";
+	const char *little = "string";
+	size_t n1 = 6;
+	size_t n2 = 20;
+
+	printf("%s%s\n", "Expected null          --> ", (char*)ft_strnstr(big, little, n1));
+	printf("%s%s\n", "Expected stringisntit? --> ", (char*)ft_strnstr(big, little, n2));
+	return (0);
+}
+*/

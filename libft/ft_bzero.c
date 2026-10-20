@@ -25,8 +25,28 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		*p = '\0';
-		++p;
+		p[i] = '\0';
 		i++;
 	}
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	char	s[] = "Hello World!";
+	size_t	n = 5;
+	size_t	i;
+
+	ft_bzero(s, n);
+	printf("Expected: 0 0 0 0 0 87 111 114 108 100 33 --> ");
+	i = 0;
+	while (i < sizeof(s) - 1)
+	{
+		printf("%d ", s[i]);
+		i++;
+	}
+	printf("\n");
+	return (0);
+}
+*/

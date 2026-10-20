@@ -14,8 +14,22 @@
 
 int	ft_isalnum(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
-		|| (c >= '0' && c <= '9'))
+	if (ft_isdigit(c) || ft_isalpha(c))
 		return (1);
 	return (0);
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	int ex1 = 57; // 9
+	int ex2 = 64; // @
+	int ex3 = 97; // a
+
+	printf("%s%d\n","Expected: 1 --> ", ft_isalnum(ex1));
+	printf("%s%d\n","Expected: 0 --> ", ft_isalnum(ex2));
+	printf("%s%d\n","Expected: 1 --> ", ft_isalnum(ex3));
+	return (0);
+}
+*/

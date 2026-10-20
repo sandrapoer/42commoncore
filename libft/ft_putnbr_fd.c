@@ -6,7 +6,7 @@
 /*   By: spoernba <spoernba@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/06 15:55:45 by spoernba          #+#    #+#             */
-/*   Updated: 2026/10/06 15:55:48 by spoernba         ###   ########.fr       */
+/*   Updated: 2026/10/10 13:05:25 by spoernba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,13 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(nbr / 10, fd);
 	ft_putchar_fd(nbr % 10 + '0', fd);
 }
+
+/*
+int main(void)
+{
+	ft_putnbr_fd(0, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(-42, 1);
+	return (0);
+}
+*/

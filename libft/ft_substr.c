@@ -18,18 +18,18 @@
 
 static char	*empty_str(void)
 {
-	char	*substr;
+	char	*newstr;
 
-	substr = malloc(1);
-	if (substr == 0)
+	newstr = malloc(1);
+	if (newstr == 0)
 		return (0);
-	substr[0] = '\0';
-	return (substr);
+	newstr[0] = '\0';
+	return (newstr);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*substr;
+	char	*newstr;
 	size_t	i;
 	size_t	lenstr;
 
@@ -40,15 +40,28 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (empty_str());
 	if (len > lenstr - start)
 		len = lenstr - start;
-	substr = malloc(len + 1);
-	if (substr == 0)
+	newstr = malloc(len + 1);
+	if (newstr == 0)
 		return (0);
 	i = 0;
 	while (i < len && s[start + i] != '\0')
 	{
-		substr[i] = s[start + i];
+		newstr[i] = s[start + i];
 		i++;
 	}
-	substr[i] = '\0';
-	return (substr);
+	newstr[i] = '\0';
+	return (newstr);
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	char const *s = "Hello World!";
+	unsigned int start = 7;
+	size_t len = 5;
+
+	printf("%s%s\n", "Expected orld! --> ", ft_substr(s, start, len));
+	return (0); 
+}
+*/

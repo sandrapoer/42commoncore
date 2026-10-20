@@ -37,3 +37,25 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(ptr, total);
 	return (ptr);
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	int		*a;
+	void	*b;
+	size_t	i;
+
+	a = ft_calloc(5, sizeof(int));
+	printf("%s", "Expected 0 0 0 0 0 --> ");
+	i = 0;
+	while (i < 5)
+	{
+		printf("%d ", a[i]);
+		i++;
+	}
+	printf("\n");
+	free(a);
+
+}
+*/

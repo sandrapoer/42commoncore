@@ -19,3 +19,28 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new->next = *lst;
 	*lst = new;
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	t_list	*head = NULL;
+	t_list	*node1 = ft_lstnew("Hello");
+	t_list	*node2 = ft_lstnew("World!");
+
+	ft_lstadd_front(&head, node1);
+	printf("%s\n", "Example 1:");
+	printf("%s%s\n", "Expected Hello --> ", (char*)head->content);
+	printf("%s%d\n", "Expected 1     --> ", head->next == NULL);
+	
+	ft_lstadd_front(&head, node2);
+	printf("\n%s\n", "Example 2:");
+	printf("%s%s\n", "Expected Hello --> ", (char*)head->content);
+	printf("%s%s\n", "Expected World --> ", (char*)head->next->content);
+	printf("%s%d\n", "Expected 1     --> ", head->next->next == NULL);
+
+	free(node1);
+	free(node2);
+	return(0);
+}
+*/

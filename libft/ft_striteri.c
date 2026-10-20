@@ -20,3 +20,21 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	while (s[++i])
 		f((unsigned int)i, &s[i]);
 }
+
+/*
+void test_toupper(unsigned int i, char *c)
+{
+	(void)i;
+	*c = (char)ft_toupper(*c);
+}
+
+int main(void)
+{
+	#include <stdio.h>
+	char s[] = "Hello World!";
+	ft_striteri(s, test_toupper);
+
+	printf("%s%s\n", "Expected HELLO WORLD! --> ", s);
+	return (0);
+}
+*/

@@ -6,20 +6,11 @@
 /*   By: spoernba <spoernba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 15:48:51 by spoernba          #+#    #+#             */
-/*   Updated: 2026/10/08 16:30:54 by spoernba         ###   ########.fr       */
+/*   Updated: 2026/10/10 13:06:28 by spoernba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// on overflow, behave like glibc atoi(): (int)strtol(), which clamps
-// to LONG_MAX / LONG_MIN before the conversion to int
-static int	overflow(int sign)
-{
-	if (sign == 1)
-		return ((int)LONG_MAX);
-	return ((int)LONG_MIN);
-}
 
 int	ft_atoi(const char *str)
 {
@@ -41,10 +32,24 @@ int	ft_atoi(const char *str)
 	number = 0;
 	while (ft_isdigit(str[i]))
 	{
-		if (number > (LONG_MAX - (str[i] - '0')) / 10)
-			return (overflow(sign));
 		number = number * 10 + (str[i] - '0');
 		i++;
 	}
 	return ((int)(number * sign));
 }
+
+/*
+int main(void)
+{
+	#include <stdio.h>
+	char*	ex1 = "1234";
+	char*	ex2 = " --1234";
+	char*	ex3 = " +1234";
+	char*	ex4 = " -2147483648";
+
+	printf("%s%d\n", "Expected 1234        --> ", ft_atoi(ex1));
+	printf("%s%d\n", "Expected 0           --> ", ft_atoi(ex2));
+	printf("%s%d\n", "Expected 1234        --> ", ft_atoi(ex3));
+	printf("%s%d\n", "Expected -2147483648 --> ", ft_atoi(ex4));
+}
+*/
