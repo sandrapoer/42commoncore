@@ -9,7 +9,7 @@ and build on each other.
 | Project          | Description                              | Status        |
 |------------------|------------------------------------------|---------------|
 | `libft/`         | My own C library of standard functions   | Completed     |
-| `ft_printf/`     | Reimplementation of `printf`             | Not started   |
+| `ft_printf/`     | Reimplementation of `printf`             | In progress   |
 | `get_next_line/` | Reading a file line by line              | Not started   |
 | `born2beroot/`   | Virtual machine and server setup         | Not started   |
 
