@@ -12,11 +12,17 @@
 
 #include "ft_printf.h"
 
+/*
+Upon successful return, printf returns the number of bytes
+printed (excluding the null byte used to end output to strings).
+On error, a negative value is returned.
+*/
+
 int ft_printf(const char *str, ...)
 {
 	va_list	args;
 	int		i;
-	int		count; //absolute nr of returned chars
+	int		count;
 
 	if (!str)
 		return (-1);

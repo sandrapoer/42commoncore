@@ -9,14 +9,14 @@ External functions used: `malloc`, `free` and `write`, as well as `va_start`, `v
 ## Instructions
 
 ```bash
-make        # builds ft_printf.a
+make        # builds libftprintf.a
 make clean  # removes object files
-make fclean # removes object files and libft.a
+make fclean # removes object files and libftprintf.a
 make re     # rebuilds everything
 ```
 
 ## Resources
 
 **References**
-- variadic functions
-- Linux man pages (`man 3 <function>`), for example `man 3 strlcpy`, `man 3 memmove`, `man 3 calloc`: https://man7.org/linux/man-pages/
+- Variadic Functions: https://dev.to/pauljlucas/variadic-functions-in-c-53ml
+- Linux man page `printf`: https://www.man7.org/linux/man-pages/man3/printf.3.html
