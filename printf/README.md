@@ -18,5 +18,5 @@ make re     # rebuilds everything
 ## Resources
 
 **References**
-- Variadic Functions: https://dev.to/pauljlucas/variadic-functions-in-c-53ml
+- Variadic Functions: https://www.geeksforgeeks.org/c/variadic-functions-in-c/ & https://dev.to/pauljlucas/variadic-functions-in-c-53ml
 - Linux man page `printf`: https://www.man7.org/linux/man-pages/man3/printf.3.html
