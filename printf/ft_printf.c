@@ -14,7 +14,7 @@
 
 int ft_printf(const char *str, ...)
 {
-	va_list	*args;
+	va_list	args;
 	int		i;
 	int		count; //absolute nr of returned chars
 
@@ -31,19 +31,24 @@ int ft_printf(const char *str, ...)
 			count += ft_conversion(str[i], &args);			
 		}
 		else if (str[i] != '%')
-			count += ft_putchar_fd(1, str[i])
+			count += ft_putchar(str[i]);
+		i++;
 	}
 	va_end(args);
 	return (count);
 }
 
-
+/*
 int main(void)
 {
 	#include <stdio.h>
+
+	int num = 42;
+
 	printf("%s\n\n", "Printf does this:");
-	prinf("%");
+	printf("%s\n%c\n%d\n%u\n%x\n%X\n%p\n%%\n\n\n", "Hello", 'A', -42, 300, 30, 30, (void*)&num);
 	ft_printf("%s\n\n", "My Printf does this:");
-	ft_printf("%", );
+	ft_printf("%s\n%c\n%d\n%u\n%x\n%X\n%p\n%%\n\n", "Hello", 'A', -42, 300, 30, 30, (void*)&num);
 	return (0);
 }
+*/
