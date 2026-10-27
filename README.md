@@ -10,7 +10,7 @@ and build on each other.
 |------------------|------------------------------------------|---------------|
 | `libft/`         | My own C library of standard functions   | Completed     |
 | `ft_printf/`     | Reimplementation of `printf`             | In progress   |
-| `get_next_line/` | Reading a file line by line              | Not started   |
+| `get_next_line/` | Reading a file line by line              | In progress   |
 | `born2beroot/`   | Virtual machine and server setup         | Not started   |
 
 More projects will be added as I progress through the curriculum.
