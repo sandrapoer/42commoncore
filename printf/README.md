@@ -1,10 +1,9 @@
 *This project has been created as part of the 42 curriculum by spoernba.*
 
 ## Description
-Libft project replicates ``printf()` using functions coded previously in `libft`. All the necessary components are collected in a static library `ft_printf.h`.
+The printf project replicates `printf()`. All the necessary components are collected in a static library `libftprintf.a`.
 
-External functions used: `malloc`, `free` and `write`, as well as `va_start`, `va_arg`, `va_copy`, and `va_end`.
-
+External functions used: `write`,`va_start`, `va_arg`, `va_copy`, and `va_end`.
 
 ## Instructions
 

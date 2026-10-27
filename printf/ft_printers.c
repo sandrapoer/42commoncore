@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int ft_print_str(char *str)
+int	ft_print_str(char *str)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ int ft_print_str(char *str)
 	return (i);
 }
 
-int ft_print_hex(unsigned long n, char *base)
+int	ft_print_hex(unsigned long n, char *base)
 {
 	int	count;
 
@@ -38,7 +38,7 @@ int ft_print_hex(unsigned long n, char *base)
 	return (count);
 }
 
-int ft_print_ptr(void *ptr)
+int	ft_print_ptr(void *ptr)
 {
 	if (!ptr)
 		return (ft_print_str("(nil)"));
@@ -46,7 +46,7 @@ int ft_print_ptr(void *ptr)
 		+ ft_print_hex((unsigned long)ptr, "0123456789abcdef"));
 }
 
-int ft_print_unsigned(unsigned int n)
+int	ft_print_unsigned(unsigned int n)
 {
 	int	count;
 
@@ -57,7 +57,7 @@ int ft_print_unsigned(unsigned int n)
 	return (count);
 }
 
-int ft_print_nbr(int n)
+int	ft_print_nbr(int n)
 {
 	long	nbr;
 	int		count;
