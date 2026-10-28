@@ -17,7 +17,7 @@
 # include <unistd.h>
 
 int	ft_printf(const char *str, ...);
-int	ft_conversion(char spec, va_list args);
+int	ft_conversion(char spec, va_list *args);
 int	ft_putchar(char c);
 int	ft_print_str(char *str);
 int	ft_print_ptr(void *ptr);
