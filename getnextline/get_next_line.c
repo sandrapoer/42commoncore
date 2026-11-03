@@ -21,76 +21,70 @@
 
 static char	*ft_reader(int fd, char *buffer)
 {
-	int		bytesread;
-	char	*line;
+	ssize_t	bytesread;
+	char	*chunk;
 
-	if (!buffer)
-		line = ft_calloc(1, 1);
-	line = malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (line == NULL)
-		return (NULL);
+	chunk = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!chunk)
+		return (free(buffer), NULL);
 	bytesread = 1;
-	//read(): reads up to BUFFER_SIZE bytes from fd into
-	//the buffer startin at line
-	while (bytesread > 0)
+	while (!ft_strchr(buffer, '\n') && bytesread > 0)
 	{
-		bytesread = read(fd, line, BUFFER_SIZE);
+		bytesread = read(fd, chunk, BUFFER_SIZE);
 		if (bytesread == -1)
-			return(free(buffer), NULL)
-		// null-terminate
-		line[bytesread] = 0;
-		// put in buffer then free
-		buffer = ft_put_in_buffer(line, buffer);
-		// check for \n
-		if (ft_strchr(line, '\n'))
-			break;
+			return(free(chunk), free(buffer), NULL);
+		chunk[bytesread] = '\0';
+		buffer = ft_strjoin_free(buffer, chunk);
+		if (!buffer)
+			return (free(chunk), NULL);
 	}
-	free(line);
+	free(chunk);
 	return (buffer);
 }
 
-char	ft_put_in_buffer(char *line, char *buffer)
+static char	*ft_get_one_line(char *buffer)
 {
-	char	*temp;
+	size_t	len;
 
-	temp = ft_strjoin(line, buffer)
-	free(line);
-	return (temp);
+	if (buffer[0] == '\0')
+		return (NULL);
+	len = 0;
+	while (buffer[len] && buffer[len] != '\n')
+		len++;
+	if (buffer[len] == '\n')
+		len++;
+	return (ft_strdup(buffer, len));
+}
 
+static char	*ft_update_buffer(char *buffer)
+{
+	char	*newline;
+	char	*rest;
+
+	newline = ft_strchr(buffer, '\n');
+	if (!newline || !newline[1])
+		return (free(buffer), NULL);
+	rest = ft_strdup(newline + 1, ft_strlen(newline + 1));
+	return (free(buffer), rest);
 }
 
 char	*get_next_line(int fd)
 {
 	static char	*buffer;
+	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buffer = ft_reader(fd, buffer);
 	if (!buffer)
-		return (NULL):
-
-	// whole line to return:
-	
-	// delete returned line from buffer && prepare for next line
-
-	return (buffer);
-}
-
-// test with stdio AND file
-int main(void)
-{
-	#include <stdio.h>
-	#include <fcntl.h>
-
-	int fd = open("testfile.txt", O_RDONLY);
-	char *nextline = get_next_line(fd);
-	char *line = ft_nextline(fd);
-	printf("Line:\n%s", line);
-
-	printf("%s\n", nextline);
-	free(nextline);
-	nextline = NULL;
-	close(fd);
-
-	return (0);
+		return (NULL);
+	line = ft_get_one_line(buffer);
+	if (!line)
+	{
+		free(buffer);
+		buffer = NULL;
+		return (NULL);
+	}
+	buffer = ft_update_buffer(buffer);
+	return (line);
 }

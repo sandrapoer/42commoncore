@@ -13,10 +13,10 @@
 NAME = get_next_line.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-BUFFER_SIZE = n #tobe addeed
+BUFFER_SIZE = n
 DFLAG = -D $(BUFFER_SIZE)
 
-SRCS = get_next_line.c get_next_line_utils.h
+SRCS = get_next_line.c get_next_line_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
