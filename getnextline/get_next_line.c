@@ -24,26 +24,40 @@ static char	*ft_reader(int fd, char *buffer)
 	int		bytesread;
 	char	*line;
 
+	if (!buffer)
+		line = ft_calloc(1, 1);
 	line = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (line == NULL)
 		return (NULL);
-	bytesread = read(fd, line, BUFFER_SIZE);
-	if (bytesread <= 0)
-		return (free( line), NULL);
-	return (line);
+	bytesread = 1;
+	//read(): reads up to BUFFER_SIZE bytes from fd into
+	//the buffer startin at line
+	while (bytesread > 0)
+	{
+		bytesread = read(fd, line, BUFFER_SIZE);
+		if (bytesread == -1)
+			return(free(buffer), NULL)
+		// null-terminate
+		line[bytesread] = 0;
+		// put in buffer then free
+		buffer = ft_put_in_buffer(line, buffer);
+		// check for \n
+		if (ft_strchr(line, '\n'))
+			break;
+	}
+	free(line);
+	return (buffer);
 }
 
-/*
-char	*ft_nextline(int fd)
+char	ft_put_in_buffer(char *line, char *buffer)
 {
-	int	i;
+	char	*temp;
 
-	i = 0;
-	if (buffer[i] == '\\' && buffer[i + 1] == 'n')
-	if (buffer[i] && buffer[i + 1] == '\n')
-		return;
+	temp = ft_strjoin(line, buffer)
+	free(line);
+	return (temp);
+
 }
-*/
 
 char	*get_next_line(int fd)
 {
@@ -52,10 +66,17 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buffer = ft_reader(fd, buffer);
+	if (!buffer)
+		return (NULL):
+
+	// whole line to return:
+	
+	// delete returned line from buffer && prepare for next line
+
 	return (buffer);
 }
 
-// test with stdinput AND file
+// test with stdio AND file
 int main(void)
 {
 	#include <stdio.h>
