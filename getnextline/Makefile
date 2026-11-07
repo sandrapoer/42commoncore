@@ -14,11 +14,12 @@ NAME = get_next_line.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 BUFFER_SIZE = n
-DFLAG = -D $(BUFFER_SIZE)
+DFLAG = -D BUFFER_SIZE=$(BUFFER_SIZE)
+DEPFLAG = -MMD -MP
 
 SRCS = get_next_line.c get_next_line_utils.c
-
-OBJS = $(SRCS:.c=.o)
+OBJS = ${SRCS:.c=.o}
+DEP = ${SRC:.c=.d}
 
 all: $(NAME)
 
@@ -26,14 +27,16 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c libftprintf.h
-	$(CC) $(CFLAGS) $(DFLAG) -c $< -o $@
+	$(CC) $(CFLAGS) $(DFLAG) $(DEPFLAG) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(DEP)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+-include ${DEP}
 
 .PHONY: all clean fclean re
