@@ -17,20 +17,20 @@ BUFFER_SIZE = n
 DFLAG = -D BUFFER_SIZE=$(BUFFER_SIZE)
 DEPFLAG = -MMD -MP
 
-SRCS = get_next_line.c get_next_line_utils.c
-OBJS = ${SRCS:.c=.o}
+SRC = get_next_line.c get_next_line_utils.c
+OBJ = ${SRC:.c=.o}
 DEP = ${SRC:.c=.d}
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+$(NAME): $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
 %.o: %.c libftprintf.h
 	$(CC) $(CFLAGS) $(DFLAG) $(DEPFLAG) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(DEP)
+	rm -f $(OBJ) $(DEP)
 
 fclean: clean
 	rm -f $(NAME)
