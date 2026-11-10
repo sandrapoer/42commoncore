@@ -34,7 +34,7 @@ static char	*ft_reader(int fd, char *buffer)
 		if (bytesread == -1)
 			return(free(chunk), free(buffer), NULL);
 		chunk[bytesread] = '\0';
-		buffer = ft_strjoin_free(buffer, chunk);
+		buffer = ft_strjoin(buffer, chunk);
 		if (!buffer)
 			return (free(chunk), NULL);
 	}
