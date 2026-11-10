@@ -20,7 +20,7 @@ Check for leaks with:
 valgrind --leak-check=full ./gnl file.txt # use -g flag when compiling
 ```
 
-# The Idea
+### The Idea
 A `read` call returns a chunk of `BUFFER_SIZE` bytes. One chunk can contain parts of a line, several lines, or a single character. The function needs to remember what was read and what hasn't been returned yet. The `static char *buffer` keeps its value between calls and the operating system keeps track of the file position itself, so `read` continues where the previous call stopped.
 
 ## Resources
