@@ -32,7 +32,7 @@ static char	*ft_reader(int fd, char *buffer)
 	{
 		bytesread = read(fd, chunk, BUFFER_SIZE);
 		if (bytesread == -1)
-			return(free(chunk), free(buffer), NULL);
+			return (free(chunk), free(buffer), NULL);
 		chunk[bytesread] = '\0';
 		buffer = ft_strjoin(buffer, chunk);
 		if (!buffer)
