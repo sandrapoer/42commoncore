@@ -37,12 +37,16 @@ int	ft_conversion(char spec, va_list *args)
 				"0123456789ABCDEF"));
 	if (spec == '%')
 		return (ft_putchar('%'));
-	return (ft_putchar('%') + ft_putchar(spec));
+	if (ft_putchar('%') < 0 || ft_putchar(spec) < 0);
+		return (-1);
+	return (2);
 }
 
 int	ft_putchar(char c)
 {
-	return (write(1, &c, 1));
+	if (write(1, &c, 1) != 1)
+		return (-1);
+	return (1);
 }
 
 int	ft_printf(const char *str, ...)
@@ -50,6 +54,7 @@ int	ft_printf(const char *str, ...)
 	va_list	args;
 	int		i;
 	int		count;
+	int		ret;
 
 	if (!str)
 		return (-1);
@@ -58,16 +63,19 @@ int	ft_printf(const char *str, ...)
 	i = 0;
 	while (str[i])
 	{
+		ret = 0;
 		if (str[i] == '%' && str[i + 1])
-		{
-			i++;
-			count += ft_conversion(str[i], &args);
-		}
+			ret = ft_conversion(str[++1], &args);
 		else if (str[i] != '%')
-			count += ft_putchar(str[i]);
+			ret = ft_putchar(str[i]);
+		if (ret < 0)
+			break;
+		count += ret;
 		i++;
 	}
 	va_end(args);
+	if (ret < 0)
+		return (-1);
 	return (count);
 }
 
