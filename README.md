@@ -9,8 +9,9 @@ and build on each other.
 | Project          | Description                              | Status        |
 |------------------|------------------------------------------|---------------|
 | `libft/`         | My own C library of standard functions   | Completed     |
-| `ft_printf/`     | Reimplementation of `printf`             | In progress   |
+| `ft_printf/`     | Reimplementation of `printf`             | Completed     |
 | `get_next_line/` | Reading a file line by line              | In progress   |
+| `push_swap/`     | Sorting Algorithms                       | In progress   |
 
 More projects will be added as I progress through the curriculum.
 
